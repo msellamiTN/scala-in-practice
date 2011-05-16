@@ -1,0 +1,19 @@
+#{extends 'main.html' /}
+#{set title:'Custom' /}
+
+<p>Result :</p>
+<p class="result0"></p>
+<p class="result1"></p>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.get("/users", function(users) {
+            // maybe > 5 (users map map map)
+            var appendTo0 = function(val) { if(val) $(".result0").append("<div>"+val+"</div>"); };
+            var toName = function(user) { return user.name };
+
+            // either > 5 lowercase else uppercase (users map map map)
+            var appendTo1 = function(val) { if(val )$(".result1").append("<div>"+val+"</div>"); };
+        });
+    });
+</script>

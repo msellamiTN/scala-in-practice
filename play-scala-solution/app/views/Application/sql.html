@@ -1,0 +1,41 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<p id="menu"></p>
+
+<div>Total countries : ${count}</div>
+
+<!-- Country object -->
+<ul>
+#{list items:countries, as:'country'}
+    <li>${country}</li>
+#{/list}
+</ul>
+
+<ul>
+<!-- Country code -->
+#{list items:countries, as:'country'}
+    <li>${country._1}</li>
+#{/list}
+</ul>
+
+<ul>
+<!-- Country code -->
+#{list items:dispatch, as:'country'}
+    <li>${country}</li>
+#{/list}
+</ul>
+
+<ul>
+<!-- Country code -->
+#{list items:listParam, as:'country'}
+    <li>${country}</li>
+#{/list}
+</ul>
+
+<ul>
+<!-- Country code -->
+#{list items:complex, as:'country'}
+    <li>${country}</li>
+#{/list}
+</ul>

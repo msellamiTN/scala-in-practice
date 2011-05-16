@@ -1,0 +1,37 @@
+#{extends 'main.html' /}
+#{set title:'Underscore' /}
+
+<p>Result :</p>
+<p class="result0"></p>
+<p class="result1"></p>
+<p class="result2"></p>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.get("/users", function(users) {
+            // join name direct function
+            $(".result0").html(_.map(users, function(user) { return user.name }).join(", "));
+
+            // join name by chaining, filter no i (use functions)
+            var toName = function(user) { return user.name };
+            var noI = function(name) { return name.indexOf("i") == -1 };
+            $(".result1").html(_(users).chain().map(toName).select(noI).value().join(", "));
+
+            // count words and pretty print
+            var lyrics = [
+                {line : 1, words : "I'm a lumberjack and I'm okay"},
+                {line : 2, words : "I sleep all night and I work all day"},
+                {line : 3, words : "He's a lumberjack and he's okay"},
+                {line : 4, words : "He sleeps all night and he works all day"}
+            ];
+            var wordCounts = _(lyrics).chain()
+                .map(function(line) { return line.words.split(' '); })
+                .flatten()
+                .reduce(function(counts, word) {
+                    counts[word] = (counts[word] || 0) + 1;
+                    return counts;
+            }, {}).value();
+            $(".result2").html(_.map(wordCounts, function(val, key) { return key+": "+val; }).join("<br />"));
+        });
+    });
+</script>

@@ -1,0 +1,37 @@
+#{extends 'main.html' /}
+#{set title:'Functional Javascript' /}
+
+<p>Result :</p>
+<p class="result0"></p>
+<p class="result1"></p>
+<p class="result2"></p>
+<p class="result3"></p>
+<p class="result4"></p>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.get("/users", function(users) {
+            // join name direct function
+            $(".result0").html(map("x -> x.name", users).join(", "));
+
+            // join name by chaining, filter no i
+            $(".result1").html(users.map("_.name".lambda()).filter("_.indexOf('i')==-1".lambda()).join(", "));
+
+            // reduce
+            $(".result2").html(reduce('x y -> 2*x+y', 0, [1,0,2,4]));
+
+            // square
+            var square = 'x*x'.lambda();
+            $(".result3").html(square(3));
+
+            // lambdas withs param, no params, curry, uncurry/flip/curry
+            var lambdas = [
+                'y x -> x + 2*y'.lambda()(2, 3), // with param
+                'x + 2*y'.lambda()(2, 3), // no param
+                'x -> y -> x + 2*y'.lambda()(2)(3), // curry
+                'x -> y -> x + 2*y'.lambda().uncurry().flip().curry(2)(3) // curry on flip
+            ];
+            $(".result4").html(lambdas.join(", "));
+        });
+    });
+</script>

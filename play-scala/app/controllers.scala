@@ -1,16 +1,24 @@
 package controllers
 
 import play.mvc._
+import results._
+import play.db.anorm._
+import play.db.anorm.defaults._
 
-/**
- * http://scala.playframework.org/documentation/scala-0.9/dataBinding
- */
 object Application extends Controller {
-    
-    def index = Template
-    
-    def hello(name: String = "Guest") = {
-   	 "Hello " + name + " !"
-    }
-    
+
+  def index = Template
+  
+  // hello Template of String with symbol
+
+  // hello Template of Option[String]
+  
+  // helloHtml
+  
+  // helloXml
+  
+  // responses
+
+  // sql
+
 }

@@ -1,0 +1,27 @@
+#{extends 'main.html' /}
+#{set title:'Functional Javascript' /}
+
+<p>Result :</p>
+<p class="result0"></p>
+<p class="result1"></p>
+<p class="result2"></p>
+<p class="result3"></p>
+<p class="result4"></p>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.get("/users", function(users) {
+            // join name direct function
+
+            // join name by chaining, filter no i
+
+            // reduce
+
+            // square
+
+            // lambdas withs param, no params, curry, uncurry/flip/curry
+            var lambdas = [];
+            $(".result4").html(lambdas.join(", "));
+        });
+    });
+</script>

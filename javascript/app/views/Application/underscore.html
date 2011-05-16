@@ -1,0 +1,25 @@
+#{extends 'main.html' /}
+#{set title:'Underscore' /}
+
+<p>Result :</p>
+<p class="result0"></p>
+<p class="result1"></p>
+<p class="result2"></p>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.get("/users", function(users) {
+            // join name direct function
+
+            // join name by chaining, filter no i (use functions)
+
+            // count words and pretty print
+            var lyrics = [
+                {line : 1, words : "I'm a lumberjack and I'm okay"},
+                {line : 2, words : "I sleep all night and I work all day"},
+                {line : 3, words : "He's a lumberjack and he's okay"},
+                {line : 4, words : "He sleeps all night and he works all day"}
+            ];
+        });
+    });
+</script>

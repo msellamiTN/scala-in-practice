@@ -8,20 +8,10 @@
         #{get 'moreStyles' /}
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
         <script src="@{'/public/javascripts/jquery-1.5.2.min.js'}" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+
+        </script>
         #{get 'moreScripts' /}
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$("a").live("click", function(event) {
-					$("ul").hide();
-					$("ul:eq("+$(this).attr("href")+")").show();
-					event.preventDefault();
-				});
-				$("ul").each(function(index) {
-					$("#menu").append("<span><a href='"+index+"'>menu "+(index+1)+"</a></span>&nbsp;");
-				});
-				$("a:first").click();
-			});
-		</script>
     </head>
     <body>
         #{doLayout /}

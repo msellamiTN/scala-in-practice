@@ -1,0 +1,25 @@
+#{extends 'main.html' /}
+#{set title:'Custom' /}
+
+<p>Result :</p>
+<p class="result0"></p>
+<p class="result1"></p>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.get("/users", function(users) {
+            // maybe > 5
+            var toName = function(user) { return user.name };
+            var lengthSuperiorTo5 = function(str) { return str.length > 5 };
+            var lowerCase = function(str) { return str.toLowerCase(); };
+
+            var lowerCaseBigWord = maybe(lowerCase, lengthSuperiorTo5);
+            users.map(toName).map(lowerCaseBigWord).map(function(val) { if(val) $(".result0").append("<div>"+val+"</div>"); });
+
+            // either > 5 lowercase else uppercase
+            var upperCase = function(str) { return str.toUpperCase(); };
+            var lowerCaseBigWordElseUpperCase = either(lowerCase, upperCase, lengthSuperiorTo5);
+            users.map(toName).map(lowerCaseBigWordElseUpperCase).map(function(val) { if(val )$(".result1").append("<div>"+val+"</div>"); });
+        });
+    });
+</script>

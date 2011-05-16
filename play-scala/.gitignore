@@ -1,0 +1,7 @@
+.settings
+tmp
+eclipse
+lib
+.classpath
+.project
+.scala_dependencies
