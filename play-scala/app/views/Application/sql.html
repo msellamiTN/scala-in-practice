@@ -1,0 +1,13 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<p id="menu"></p>
+
+<div>Total countries : ${count}</div>
+
+<!-- Country object -->
+<ul>
+#{list items:countries, as:'country'}
+    <li>${country}</li>
+#{/list}
+</ul>
