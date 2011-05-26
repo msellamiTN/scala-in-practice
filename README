@@ -1,0 +1,18 @@
+***************************
+Scala in practice exercises
+***************************
+
+First part : slideshare presentation
+
+Second part : exercices
+   - all you need is a play framework in your path, mysql with world database (db folder in play-scala)
+   - just run some play idealize / eclipsify on projects (idea and javascript projects in idea and play-scala in eclipse)
+   - open REPL and play with List, Map, Function, Option...
+   - open idea project and answer questions
+   - open javascript project, start play and play with functionaljavascript, underscore and custom javascript functions maybe and either
+   - open play scrapbook (in scala module) and play with it
+   - finally, open play-scala, start play and add some actions (exercices) and finish with some sql queries using Anorm
+
+All solutions are in {project}-solution projects.
+
+Enjoy ^^
