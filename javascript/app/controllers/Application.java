@@ -8,6 +8,10 @@ import java.util.List;
 
 public class Application extends Controller {
 
+   public static void functional() {
+      render();
+   }
+
    public static void users() {
       List<User> users = new ArrayList<User>();
       users.add(new User("Odersky"));

@@ -19,6 +19,8 @@ object Application extends Controller {
   
   // responses
 
-  // sql
-
+  // Anorm sql
+  def sql() = {
+    Template()
+  }
 }

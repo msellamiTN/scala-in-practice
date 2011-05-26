@@ -3,7 +3,7 @@ package controllers
 import play.mvc._
 import results._
 import play.db.anorm._
-import play.db.anorm.defaults._
+import defaults._
 
 object Application extends Controller {
 
@@ -35,10 +35,6 @@ object Application extends Controller {
   case class City(id: Pk[Int], name: String)
   case class CountryLanguage(language: String, isOfficial: String)
 
-  object Country extends Magic[Country]
-  object CountryLanguage extends Magic[CountryLanguage]
-  object City extends Magic[City]
-
   def sql() = {
 	// Select 1
     var result: Boolean = SQL("Select 1").execute()
@@ -49,11 +45,11 @@ object Application extends Controller {
       c => println(c + " rows were updated!"))
       
     // Count
-    val firstRow = SQL("Select count(*) as c from Country").apply().head
+    val firstRow = SQL("select count(*) as c from Country").apply().head
     val countryCount = firstRow[Long]("c")
 
     // Transform the resulting Stream[Row] as a List[(String,String)]
-    val selectCountries = SQL("Select * from Country")
+    val selectCountries = SQL("select * from Country")
     val countries = selectCountries().map(row => row[String]("code") -> row[String]("name")).toList
     
     // Multiline string, params (on and onParams)
@@ -93,5 +89,9 @@ object Application extends Controller {
     // Template
     Template('count -> countryCount, 'countries -> countries, 'dispatch -> dispatch, 'listParam -> listParam, 'complex -> complex)
   }
+  
+  object Country extends Magic[Country]
+  object CountryLanguage extends Magic[CountryLanguage]
+  object City extends Magic[City]
 
 }

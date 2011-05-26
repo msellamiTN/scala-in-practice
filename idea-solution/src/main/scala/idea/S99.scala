@@ -8,6 +8,7 @@ object S99 extends Application {
   // Example:
   // scala> last(List(1, 1, 2, 3, 5, 8))
   // res0: Int = 8
+  // To show => Warning
 
   def lastBuiltin[A](ls: List[A]): A = ls.last
   println(lastBuiltin(list))
@@ -24,6 +25,7 @@ object S99 extends Application {
   // Example:
   // scala> penultimate(List(1, 1, 2, 3, 5, 8))
   // res0: Int = 5
+  // To show => Unreachable code
 
   def penultimateBuiltin[A](ls: List[A]): A =
     if (ls.isEmpty) throw new NoSuchElementException
@@ -61,6 +63,7 @@ object S99 extends Application {
   // Example:
   // scala> length(List(1, 1, 2, 3, 5, 8))
   // res0: Int = 6
+  // To show => builtin, recursive, FP
 
   def lengthBuiltin[A](ls: List[A]): Int = ls.length
   println(lengthBuiltin(list))

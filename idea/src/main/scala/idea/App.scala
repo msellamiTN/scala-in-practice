@@ -6,8 +6,6 @@ object App extends Application {
 
   // List map, filter, mkString
 
-  // Option Some, None
-
   // Curry multiply, double, triple
 
 }

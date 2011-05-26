@@ -9,16 +9,16 @@ object App extends Application {
   println( "Hello World!" );
 
   // List map, filter, mkString
-  val list = List(1,2,3)
+  val list = List(1,2,3,4,5)
   println(list map {_*2})
   println(list.filter(_%2==0))
   println(list.mkString(", "))
 
   // Option Some, None
-  var option:Option[String]  = Some("Foo");
+  var option:Option[String]  = Some("Foobar");
   println(option.get)
   option = None
-  println(option.getOrElse("0_o"))
+  println(option.getOrElse("Default"))
 
   // Curry multiply, double, triple
   def multiply(x:Int)(y:Int):Int = x*y

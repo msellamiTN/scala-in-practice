@@ -3,7 +3,7 @@ package idea
 import scala.actors.Actor
 import scala.actors.Actor._
 
-// Sealed class
+// Sealed class Operation
 
 // Add and Sub case class
 

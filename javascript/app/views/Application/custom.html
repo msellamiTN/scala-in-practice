@@ -8,9 +8,11 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $.get("/users", function(users) {
-            // maybe > 5 (users map map map)
-            var appendTo0 = function(val) { if(val) $(".result0").append("<div>"+val+"</div>"); };
             var toName = function(user) { return user.name };
+
+            // PS : maybe and either defined in main.html
+            // maybe toLowerCase if >5 (users map map map)
+            var appendTo0 = function(val) { if(val) $(".result0").append("<div>"+val+"</div>"); };
 
             // either > 5 lowercase else uppercase (users map map map)
             var appendTo1 = function(val) { if(val )$(".result1").append("<div>"+val+"</div>"); };

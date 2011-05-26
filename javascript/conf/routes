@@ -5,6 +5,7 @@
 # Home page
 GET     /                                       Application.underscore
 GET     /users                                  Application.users
+GET     /functional                             Application.functional
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

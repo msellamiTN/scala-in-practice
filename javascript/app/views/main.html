@@ -8,8 +8,37 @@
         #{get 'moreStyles' /}
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
         <script src="@{'/public/javascripts/jquery-1.5.2.min.js'}" type="text/javascript" charset="utf-8"></script>
+        <script src="@{'/public/javascripts/to-function.js'}" type="text/javascript" charset="utf-8"></script>
+        <script src="@{'/public/javascripts/functional.js'}" type="text/javascript" charset="utf-8"></script>
+        <script src="@{'/public/javascripts/underscore.js'}" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript">
+            Functional.install();
 
+            /** Execute action if predicate is true. */
+            function maybe(action,predicate){
+                return function (val) {
+                    if(!val) {
+                        if((!predicate)||(predicate())) return action();
+                        else return null;
+                    } else {
+                        if((!predicate)||(predicate(val))) return action(val);
+                        else return null;
+                    }
+                };
+            }
+
+            /** Execute action1 if predicate is true and execute action2 if predicate is false. */
+            function either(action1,action2,selector) {
+                return function (val) {
+                    if(!val) {
+                        if((!selector)||selector()) return action1();
+                        else return action2();
+                    } else {
+                        if((!selector)||selector(val)) return action1(val);
+                        else return action2(val);
+                    }
+                };
+            }
         </script>
         #{get 'moreScripts' /}
     </head>
