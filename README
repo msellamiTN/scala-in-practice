@@ -1,7 +1,8 @@
+***************************
 Scala in practice exercises
-===
+***************************
 
-First part : slideshare presentation (available at [Slideshare](http://www.slideshare.net/rmat0n/scala-par-la-pratique-8140705]))
+First part : slideshare presentation (available at http://www.slideshare.net/rmat0n/scala-par-la-pratique-8140705)
 
 Second part : exercices
    - all you need is a play framework in your path, mysql with world database (db folder in play-scala)
